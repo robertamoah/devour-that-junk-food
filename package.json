@@ -1,0 +1,20 @@
+{
+  "name": "devour-that-junk-food",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robertamoah/devour-that-junk-food.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/robertamoah/devour-that-junk-food/issues"
+  },
+  "homepage": "https://github.com/robertamoah/devour-that-junk-food#readme"
+}
