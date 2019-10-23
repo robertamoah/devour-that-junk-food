@@ -23,5 +23,8 @@ connection.connect(function(err) {
   console.log("connected as id " + connection.threadId);
 });
 
+<<<<<<< HEAD
 // Export connection
+=======
+>>>>>>> 7209b2b8bb010e6bb3c2085a756d4b424513e8e3
 module.exports = connection;
