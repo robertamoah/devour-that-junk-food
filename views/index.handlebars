@@ -1,51 +1,49 @@
-<div class="text-center">
-  <h1>Eat-da-Burger!</h1>
-  <br>
-
-
-<img border="0" alt="W3Schools" src="https://stmed.net/sites/default/files/burger-wallpapers-28218-6600536.jpg" width="100" height="100">
-  <br>
-  <br>
-  <h2>Add a Burger</h2>
-  <form class="create-form">
-    <div class="form-group">
-      <label for="ca" class="font-weight-bold">Burger Name:</label>
-      <input type="text" id="ca" name="name">
-      <button class="btn btn-success" type="submit">Add Burger <i class="fas fa-hamburger"></i></button>
-    </div>
-  </form>
-
-  <br>
-  <hr>
-  <br>
-  <div class="bottom">
-    <div class="row">
-      <div class="col-6">
-        <h2 class="list-title">Burger Menu</h2>
-        <div class="list-container justify-content-center">
-          <ul class="list-unstyled font-weight-bold not-devoured">
+<div class="row">
+    <div class="col just-made">
+        <h2>Burgers</h2>
+        <hr>
+        <ul>
             {{#each burgers}}
             {{#unless devoured}}
-            {{> burgers/burger-block devoured=false}}
+            <li>{{burger_name}}
+                <button class="devour myButton" data-id="{{id}}" data-devour="{{devour}}">Devour</button>
+            </li>
             {{/unless}}
             {{/each}}
-          </ul>
-        </div>
-      </div>
-
-      <div class="col-6">
-        <h2 class="list-title">Devoured!</h2>
-        <div class="list-container justify-content-center">
-          <ul class="list-unstyled font-weight-bold devoured">
+        </ul>
+        <hr>
+    </div>
+    <div class="col just-devoured">
+        <h2>Devoured</h2>
+        <hr>
+        <ol>
             {{#each burgers}}
             {{#if devoured}}
-            {{> burgers/burger-block devoured=true}}
+            <li>{{burger_name}}</li>
             {{/if}}
             {{/each}}
-          </ul>
-        </div>
-      </div>
+        </ol>
+        <hr>
     </div>
-  </div>
-
 </div>
+
+
+<div class="row col-md-6" id="order">
+    <div class="col">
+        <hr>
+        <h2 id="order-title">Get Started Bro</h2>
+        <div id="order-box">
+            <form class="create-form">
+                <div class="form-group">
+                    <label for="burg">Burger:</label>
+                    <input type="text" id="burg" name="burger_name">
+                <button type="button submit" class="btn btn-primary">Add Bro</button>
+                    
+                </div>
+        </div>
+        <hr>
+    </div>
+</div>
+
+
+</form>

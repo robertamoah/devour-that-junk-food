@@ -1,20 +1,24 @@
-  
-const express = require("express")
-const exphbs = require("express-handlebars")
-const routes = require("./controllers/controller")
-const path = require("path")
-
-const PORT = process.env.PORT || 8080;
+const express = require("express");
+const bodyParser = require("body-parser");
+const PORT = process.env.PORT || 8081;
 const app = express();
 
-app.use("/public", express.static(path.join(__dirname, "public")))
+// Serve static content for the app from the "public" directory in the application directory.
+app.use(express.static("public"));
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: true }));
+//parse application/json
+app.use(bodyParser.json());
 
-app.use(express.urlencoded({ extended: true }))
-app.use(express.json())
+//Sets handlebars
+var exphbs = require("express-handlebars");
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
-app.engine("handlebars", exphbs({ defaultLayout: "main" }))
-app.set("view engine", "handlebars")
+//inport routes and give the server access to them.
+var routes = require("./controllers/controller");
+app.use(routes);
 
-app.use(routes)
-
-app.listen(PORT, () => console.log("Server listening on: http://localhost:" + PORT))
+app.listen(PORT, function () {
+    console.log("Server listening on: http://localhost:" + PORT)
+});

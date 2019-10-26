@@ -1,0 +1,22 @@
+.cont {
+    text-align: center
+}
+
+.body {
+    background-color: #e5ab2f;
+}
+
+.just-devoured, .just-made {
+    background-color: #f9dd8c;
+    margin: 5px;
+    border: 1px solid black;
+    border-radius: 10px;
+
+}
+
+#order {
+    background-color: #f9dd8c;
+    margin: 5px 0px 0px -10px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
